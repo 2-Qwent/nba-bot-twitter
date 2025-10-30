@@ -1,5 +1,5 @@
 services:
-  - type: pserv
+  - type: web
     name: nba-bot-twitter
     env: node
     buildCommand: npm install
@@ -8,6 +8,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 10000
       - key: NBA_API_KEY
         sync: false
       - key: TWITTER_API_KEY
