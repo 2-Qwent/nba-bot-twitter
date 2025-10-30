@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: background
     name: nba-bot-twitter
     env: node
     buildCommand: npm install
@@ -8,3 +8,13 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NBA_API_KEY
+        sync: false
+      - key: TWITTER_API_KEY
+        sync: false
+      - key: TWITTER_API_SECRET
+        sync: false
+      - key: TWITTER_ACCESS_TOKEN
+        sync: false
+      - key: TWITTER_ACCESS_SECRET
+        sync: false
