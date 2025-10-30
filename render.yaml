@@ -1,5 +1,5 @@
 services:
-  - type: background
+  - type: pserv
     name: nba-bot-twitter
     env: node
     buildCommand: npm install
