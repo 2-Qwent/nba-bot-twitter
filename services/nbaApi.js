@@ -1,9 +1,12 @@
 import { BalldontlieAPI } from "@balldontlie/sdk";
-const apiKey = process.env.NBA_API_KEY;
+
+function getNBAApi() {
+  return new BalldontlieAPI({ apiKey: process.env.NBA_API_KEY });
+}
 
 // Function to get yesterday's NBA games
 export async function getYesterdaysGames() {
-  const api = new BalldontlieAPI({ apiKey });
+  const api = getNBAApi();
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   const yesterdayStr = yesterday.toISOString().split("T")[0];
