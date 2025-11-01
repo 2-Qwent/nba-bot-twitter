@@ -8,11 +8,10 @@ export function formatTweet(gamesList) {
     }
     
     if (gamesFormat.length === 1) {
-        return `Good morning Europe! Yesterday's close game was: ${gamesFormat[0]}. Stay tuned for more updates!`;
+        return `Good morning Europe! Only one close game yesterday: ${gamesFormat[0]}.\n\nEnjoy the game! 🍿`;
     }
     
-    const allButLast = gamesFormat.slice(0, -1);
-    const lastGame = gamesFormat[gamesFormat.length - 1];
-
-    return `Good morning Europe! Yesterday's close games were: ${allButLast.join(", ")} and ${lastGame}. Stay tuned for more updates!`;
+    const games = gamesFormat.map(game => `🏀 ${game}`).join("\n");
+    
+    return `Good morning Europe! Yesterday's close games:\n\n${games}\n\nPick your favorite!`;
 }

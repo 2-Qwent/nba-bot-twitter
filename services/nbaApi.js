@@ -19,8 +19,8 @@ export async function getYesterdaysGames() {
     const games = response.data.map((game) => {
       return {
         id: game.id,
-        homeTeam: game.home_team.full_name,
-        visitorTeam: game.visitor_team.full_name,
+        homeTeam: game.home_team.name,
+        visitorTeam: game.visitor_team.name,
         homeScore: game.home_team_score,
         visitorScore: game.visitor_team_score,
         status: game.status,
