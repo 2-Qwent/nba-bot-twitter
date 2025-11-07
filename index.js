@@ -6,10 +6,15 @@ import { formatTweet } from "./utils/formatTweet.js";
 import cron from "node-cron";
 
 
-cron.schedule("0 8 * * *", async () => {
+cron.schedule("15 7 * * *", async () => {
   try {
+    console.log("Fetching yesterday's close games...");
     const closeGames = await getYesterdaysCloseGames();
+    console.log("Fetched games:", closeGames);
+    console.log("Formatting tweet...");
     const tweet = formatTweet(closeGames);
+    console.log("Formatted tweet:", tweet);
+    console.log("Posting tweet...");
     await postTweet(tweet);
     console.log("Bot executed successfully!");
   } catch (error) {
@@ -20,4 +25,4 @@ cron.schedule("0 8 * * *", async () => {
   timezone: "Europe/Paris"
 });
 
-console.log("NBA Bot started! Will tweet daily at 8:00 AM CET");
+console.log("NBA Bot started! Will tweet daily at 7:15 AM CET");

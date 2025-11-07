@@ -8,10 +8,10 @@ export function formatTweet(gamesList) {
     }
     
     if (gamesFormat.length === 1) {
-        return `Good morning Europe! Only one close game yesterday: ${gamesFormat[0]}.\n\nEnjoy the game! 🍿`;
+        return `Good morning Europe! Only one close game last night: ${gamesFormat[0]}.\n\nEnjoy the game! 🍿`;
     }
     
     const games = gamesFormat.map(game => `🏀 ${game}`).join("\n");
-    
-    return `Good morning Europe! Yesterday's close games:\n\n${games}\n\nPick your favorite!`;
+
+    return `Good morning Europe! Last night's close games:\n\n${games}\n\nPick your favorite!`;
 }
