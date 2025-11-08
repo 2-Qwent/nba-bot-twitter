@@ -6,7 +6,7 @@ import { formatTweet } from "./utils/formatTweet.js";
 import cron from "node-cron";
 
 
-cron.schedule("15 7 * * *", async () => {
+cron.schedule("45 6 * * *", async () => {
   try {
     console.log("Fetching yesterday's close games...");
     const closeGames = await getYesterdaysCloseGames();
@@ -25,4 +25,4 @@ cron.schedule("15 7 * * *", async () => {
   timezone: "Europe/Paris"
 });
 
-console.log("NBA Bot started! Will tweet daily at 7:15 AM CET");
+console.log("NBA Bot started! Will tweet daily at 6:45 AM CET");

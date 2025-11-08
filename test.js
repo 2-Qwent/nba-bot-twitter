@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import { getYesterdaysCloseGames } from "./services/nbaApi.js";
 import { formatTweet } from "./utils/formatTweet.js";
+import { postTweet } from "./services/twitter.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ async function testBot() {
     console.log("📝 Formatting tweet...");
     const tweet = formatTweet(closeGames);
     console.log("💬 Tweet content:", tweet);
+    // await postTweet(tweet);
 
   } catch (error) {
     console.error("❌ Test failed:", error);
