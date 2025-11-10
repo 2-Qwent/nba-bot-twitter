@@ -10,7 +10,7 @@ cron.schedule("45 6 * * *", async () => {
   try {
     console.log("Fetching yesterday's close games...");
     const closeGames = await getYesterdaysCloseGames();
-    console.log("Fetched games:", closeGames);
+    console.log("Fetched close games:", closeGames);
     console.log("Formatting tweet...");
     const tweet = formatTweet(closeGames);
     console.log("Formatted tweet:", tweet);

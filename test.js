@@ -11,7 +11,7 @@ async function testBot() {
     
     console.log("📡 Fetching yesterday's close games...");
     const closeGames = await getYesterdaysCloseGames();
-    console.log("🏀 Found games:", closeGames);
+    console.log("🏀 Found close games:", closeGames);
     
     console.log("📝 Formatting tweet...");
     const tweet = formatTweet(closeGames);
