@@ -4,7 +4,7 @@ export function formatTweet(gamesList) {
     });
     
     if (gamesList.length === 0) {
-        return "Good morning Europe! No close NBA games from last night. Have a great day! 🏀";
+        return "Good morning Europe! No close NBA games after 3Q from last night. Have a great day! 🏀";
     }
     
     if (gamesFormat.length === 1) {
