@@ -4,14 +4,14 @@ export function formatTweet(gamesList) {
     });
     
     if (gamesList.length === 0) {
-        return "Good morning Europe! No close NBA games after 3Q from last night. Have a great day! 🏀";
+        return "Good morning Europe! No close games (criterias in bio) from last night. Have a great day! 🏀";
     }
     
     if (gamesFormat.length === 1) {
-        return `Good morning Europe! Only one close game after 3Q last night: ${gamesFormat[0]}.\n\nEnjoy the game! 🍿`;
+        return `Good morning Europe! Only one close game (criterias in bio) last night: ${gamesFormat[0]}.\n\nEnjoy the game! 🍿`;
     }
     
     const games = gamesFormat.map(game => `🏀 ${game}`).join("\n");
 
-    return `Good morning Europe! Last night's close games after 3Q:\n\n${games}\n\nPick your favorite!`;
+    return `Good morning Europe! Last night's close games (criterias in bio):\n\n${games}\n\nPick your favorite!`;
 }

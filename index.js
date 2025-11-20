@@ -11,6 +11,12 @@ cron.schedule("45 6 * * *", async () => {
     console.log("Fetching yesterday's close games...");
     const closeGames = await getYesterdaysCloseGames();
     console.log("Fetched close games:", closeGames);
+    if (closeGames === false) {
+      console.log("Error fetching close games. Tweeting error.");
+      await postTweet("⚠️ There was an error fetching NBA games. Sorry for the inconvenience. I'm on it!");
+      console.log("Bot executed with error tweet.");
+      return;
+    }
     console.log("Formatting tweet...");
     const tweet = formatTweet(closeGames);
     console.log("Formatted tweet:", tweet);
